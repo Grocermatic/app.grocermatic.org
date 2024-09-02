@@ -1,40 +1,21 @@
 {
-  "name": "@menglinmaker/npm-library-boilerplate",
   "version": "0.0.0",
-  "description": "Boilerplate for creating NPM library with CJS, ESM and DTS output",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    "import": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "require": {
-      "types": "./dist/index.d.cts",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "files": ["dist"],
-  "repository": "https://github.com/MengLinMaker/npm-library-boilerplate.git",
-  "keywords": ["boilerplate", "npm", "library"],
+  "repository": "https://github.com/Grocermatic/app.grocermatic.org",
   "author": "Meng Lin <menglinmaker@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MengLinMaker/npm-library-boilerplate/issues"
+    "url": "https://github.com/Grocermatic/app.grocermatic.org/issues"
   },
-  "homepage": "https://github.com/MengLinMaker/npm-library-boilerplate#readme",
+  "homepage": "https://github.com/Grocermatic/app.grocermatic.org#readme",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "postinstall": "simple-git-hooks",
     "commit": "czg",
     "format": "biome check --write --verbose",
-    "lint": "eslint --fix & tsc --noEmit --incremental",
+    "lint": "eslint --fix",
     "test": "vitest",
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean --sourcemap && attw -P .",
-    "version": "changeset version",
-    "release": "changeset publish"
+    "version": "changeset version"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.4",
@@ -52,7 +33,6 @@
     "eslint-plugin-compat": "^6.0.0",
     "simple-git-hooks": "^2.11.1",
     "tsup": "^8.2.4",
-    "typescript-eslint": "^8.3.0",
     "vitest": "^2.0.2"
   },
   "simple-git-hooks": {
@@ -64,5 +44,8 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all", "not android 127"]
   }
 }
