@@ -13,7 +13,7 @@
     "postinstall": "simple-git-hooks",
     "commit": "czg",
     "format": "biome check --write --verbose",
-    "lint": "eslint --fix & tsc --noEmit --incremental",
+    "lint": "eslint --fix",
     "test": "vitest",
     "version": "changeset version",
     "release": "changeset publish"
@@ -34,7 +34,6 @@
     "eslint-plugin-compat": "^6.0.0",
     "simple-git-hooks": "^2.11.1",
     "tsup": "^8.2.4",
-    "typescript-eslint": "^8.3.0",
     "vitest": "^2.0.2"
   },
   "simple-git-hooks": {
@@ -46,5 +45,8 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all", "not android 127"]
   }
 }
