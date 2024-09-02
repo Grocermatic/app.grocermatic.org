@@ -18,9 +18,12 @@ jobs:
           node-version: latest
           cache: 'pnpm'
 
-      # Build and test frontend
+      # Build frontend
       - run: cd frontend && pnpm install
       - run: cd frontend && pnpm build
+
+      # Run tests
+      - run: pnpm install
       - run: pnpm format
       - run: pnpm lint
       - run: pnpm test
