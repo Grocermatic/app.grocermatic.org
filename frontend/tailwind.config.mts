@@ -20,7 +20,7 @@ const colorMatrix = (
   return colorConfig
 }
 
-module.exports = {
+export default {
   content: ['**/*.{tsx,html,astro}'],
   darkMode: 'class',
   theme: {

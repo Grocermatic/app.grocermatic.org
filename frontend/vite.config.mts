@@ -3,7 +3,7 @@ import tailwindcss from 'tailwindcss'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import solid from 'vite-plugin-solid'
-const twConfig = require('./tailwind.config.cjs')
+import twConfig from './tailwind.config.mjs'
 
 export default defineConfig({
   css: {
