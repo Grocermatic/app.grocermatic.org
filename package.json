@@ -1,0 +1,68 @@
+{
+  "name": "@menglinmaker/npm-library-boilerplate",
+  "version": "0.0.0",
+  "description": "Boilerplate for creating NPM library with CJS, ESM and DTS output",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "require": {
+      "types": "./dist/index.d.cts",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "repository": "https://github.com/MengLinMaker/npm-library-boilerplate.git",
+  "keywords": ["boilerplate", "npm", "library"],
+  "author": "Meng Lin <menglinmaker@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MengLinMaker/npm-library-boilerplate/issues"
+  },
+  "homepage": "https://github.com/MengLinMaker/npm-library-boilerplate#readme",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
+    "commit": "czg",
+    "format": "biome check --write --verbose",
+    "lint": "eslint --fix & tsc --noEmit --incremental",
+    "test": "vitest",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --sourcemap && attw -P .",
+    "version": "changeset version",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.15.4",
+    "@biomejs/biome": "^1.8.3",
+    "@changesets/changelog-github": "0.5.0",
+    "@changesets/cli": "^2.27.7",
+    "@commitlint/cli": "19.4.1",
+    "@commitlint/config-conventional": "19.4.1",
+    "@eslint/js": "^9.6.0",
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.5.2",
+    "@vitest/coverage-v8": "^2.0.2",
+    "cz-git": "1.9.4",
+    "czg": "1.9.4",
+    "eslint-plugin-compat": "^6.0.0",
+    "simple-git-hooks": "^2.11.1",
+    "tsup": "^8.2.4",
+    "typescript-eslint": "^8.3.0",
+    "vitest": "^2.0.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm run format",
+    "pre-push": "pnpm run lint",
+    "commit-msg": "npx --no -- commitlint --edit \"$1\""
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  }
+}
