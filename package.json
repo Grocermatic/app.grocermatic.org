@@ -32,7 +32,6 @@
     "czg": "1.9.4",
     "eslint-plugin-compat": "^6.0.0",
     "simple-git-hooks": "^2.11.1",
-    "tsup": "^8.2.4",
     "vitest": "^2.0.2"
   },
   "simple-git-hooks": {
