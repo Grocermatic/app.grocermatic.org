@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "MengLinMaker/npm-library-boilerplate"
+      "repo": "Grocermatic/app.grocermatic.org"
     }
   ],
   "commit": false,
